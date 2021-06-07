@@ -10,7 +10,7 @@ wsServer.on('request', function (request) {
   const connection = request.accept(null, request.origin);
   connection.on('message', function (message) {
     console.log('Received Message:', message.utf8Data);
-    connection.send('Ta gueule !', (err) => console.log(err));
+    connection.send('Ta gueule !');
     connection.sendUTF('Hi this is WebSocket server!');
   });
   connection.on('close', function (reasonCode, description) {
