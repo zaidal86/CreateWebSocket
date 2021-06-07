@@ -9,7 +9,7 @@ const wsServer = new WebSocketServer({
 wsServer.on('request', function (request) {
   const connection = request.accept(null, request.origin);
   connection.on('message', function (message) {
-    console.log('Received Message:', message.utf8Data);
+    console.log('Received Message:', message);
     connection.sendUTF('Hi this is WebSocket server!');
   });
   connection.on('close', function (reasonCode, description) {
